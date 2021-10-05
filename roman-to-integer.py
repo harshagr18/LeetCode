@@ -12,4 +12,11 @@ class Solution:
         return int_val
         
 
-        # OUT - Accepted
+        # OUT - Accept
+    x = -1
+
+if x < 0:
+  raise Exception("Sorry, no numbers below zero")
+
+        
+    
