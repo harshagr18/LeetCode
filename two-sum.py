@@ -1,31 +1,28 @@
-# Problem Link : https://leetcode.com/problems/two-sum/
+# Python program for implementation of Insertion Sort
 
-"""
-def twoSum(nums, target):
-    for i in range(len(nums)):
-        for j in range(i+1,len(nums)):
-            if nums[j] == target - nums[i]:
-                return([i,j])
+# Function to do insertion sort
+def insertionSort(arr):
 
-Out - TLE
+	# Traverse through 1 to len(arr)
+	for i in range(1, len(arr)):
 
-"""
+		key = arr[i]
 
-
-def twoSum(nums, target):
-    mapping = {}
-
-    for index,val in enumerate(nums):
-        diff = target - val
-        if diff in mapping:
-            return[mapping[diff],index]
-        else:
-            mapping[val] = index
+		# Move elements of arr[0..i-1], that are
+		# greater than key, to one position ahead
+		# of their current position
+		j = i-1
+		while j >= 0 and key < arr[j] :
+				arr[j + 1] = arr[j]
+				j -= 1
+		arr[j + 1] = key
 
 
-nums = [2,7,11,15]
-target = 9
+# Driver code to test above
+arr = [12, 11, 13, 5, 6]
+insertionSort(arr)
+for i in range(len(arr)):
+	print ("% d" % arr[i])
 
-print(twoSum(nums,target))
+# This code is contributed by Mohit Kumra
 
-# Out - Accepted
